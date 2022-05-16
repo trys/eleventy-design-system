@@ -1,0 +1,7 @@
+{%- set classNames = "c-button" -%}
+
+{%- if params.colour -%}
+  {% set classNames = classNames + " c-button--" + params.colour %}
+{% endif -%}
+
+<button type="{{ params.type or 'button' }}" class="{{ classNames }}">{{ params.label }}</button>

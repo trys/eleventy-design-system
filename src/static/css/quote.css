@@ -1,0 +1,9 @@
+.c-quote {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.c-quote cite {
+  font-size: 0.875rem;
+  font-weight: 400;
+}

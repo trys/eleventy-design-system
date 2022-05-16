@@ -1,0 +1,22 @@
+<nav class="ds__sidebar ds-flow--xs">
+  <h1 class="ds-title">
+    <a href="/">Eleventy Design System</a>
+  </h1>
+
+  <ul role="list">
+    {% for item in components.menu %}
+      <li>
+        <a class="ds-link{% if page.url == item.url %} ds-link--active{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
+        {% if item.children | length %}
+          <ul role="list">
+            {% for child in item.children %}
+              <li>
+                <a class="ds-link{% if page.url == child.url %} ds-link--active{% endif %}" href="{{ child.url }}">{{ child.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

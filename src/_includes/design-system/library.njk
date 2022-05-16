@@ -1,0 +1,18 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <script type="module" src="/static/design-system/js/seven-minute-tabs.js" async></script>
+  <link rel="stylesheet" href="/static/design-system/css/design-system.css" />
+{% endblock %}
+
+{% block inner %}
+  <div class="ds">
+    <div class="ds__body">
+      {% include "./sidebar.njk" %}
+      <main class="ds__main ds-stretch">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </div>
+
+{% endblock %}

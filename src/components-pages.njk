@@ -1,0 +1,40 @@
+---
+pagination:
+    data: components.components
+    size: 1
+    alias: component
+permalink: "components/{{ component.slug }}/"
+title: "Components"
+sidebar: components
+renderData:
+  title: "{{ component.title }}"
+---
+
+{% extends "./_includes/design-system/library.njk" %}
+
+{% from "design-system/component.njk" import code, context %}
+
+{% block content %}
+  <seven-minute-tabs class="ds-stretch">
+    <ol role="tablist" class="ds-tabs" aria-label="What does this tab chooser do?">
+      <li><a class="ds-link" href="#example-tab" role="tab">Demo</a></li>
+      <li><a class="ds-link" href="#code-tab" role="tab">.html</a></li>
+      <li><a class="ds-link" href="#context-tab" role="tab">.njk & context</a></li>
+      <li><a class="ds-link" href="/components/full/{{ component.slug }}">Full Screen ↗</a></li>
+    </ol>
+
+    <div id="example-tab" role="tabpanel" class="ds-stretch">
+      <div class="ds-frame ds-stretch">
+        <iframe class="ds-stretch" src="/components/full/{{ component.slug }}" sandbox="allow-same-origin allow-scripts allow-forms allow-modals" style="" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes"></iframe>
+      </div>
+    </div>
+
+    <div id="code-tab" role="tabpanel" class="ds-code ds-stretch">
+      {{ code(component.name, component.context) }}
+    </div>
+
+    <div id="context-tab" role="tabpanel" class="ds-code ds-stretch">
+      {{ context(component.name, component.context) }}
+    </div>
+  </seven-minute-tabs>
+{% endblock %}

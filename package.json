@@ -1,0 +1,21 @@
+{
+  "name": "eleventy-design-system-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eleventy --serve --quiet",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@zachleat/seven-minute-tabs": "^2.0.0",
+    "html-prettify": "^1.0.6",
+    "require-glob": "^4.0.0",
+    "slugify": "^1.6.5"
+  }
+}

@@ -1,0 +1,19 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/static/design-system/css/design-system.css" />
+{% endblock %}
+
+{% block inner %}
+  <div class="ds">
+    <div class="ds__body">
+      {% include "./sidebar.njk" %}
+      <main class="ds__main ds-stretch">
+        <div class="ds-prose ds-prose--with-lede">
+          {{ content | safe }}
+        </div>
+      </main>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% from "design-system/component.njk" import c %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ renderData.title or title }} - Eleventy Design System</title>
+    <meta property="og:type" content="website" />
+    <!-- Replace with your own assets / build system -->
+    <link rel="stylesheet" href="/static/css/reset.css" />
+    <link rel="stylesheet" href="/static/css/button.css" />
+    <link rel="stylesheet" href="/static/css/quote.css" />
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% block inner %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{%- macro c(name, params) -%}
+  {% include "../components/" + name + "/" + name + ".njk" ignore missing %}
+{%- endmacro -%}
+
+{% macro code(name, params) %}
+  {% highlight "html" %}
+    {%- prettify -%}
+    {% include "../components/" + name + "/" + name + ".njk" ignore missing %}
+    {%- endprettify -%}
+  {% endhighlight %}
+{% endmacro %}
+
+{% macro context(name, params) %}
+{% highlight "js" %}
+{% brace %} c("{{ name }}", {{ params | console | safe }}) {% endbrace %}
+{% endhighlight %}
+{% endmacro %}
