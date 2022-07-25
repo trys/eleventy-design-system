@@ -1,5 +1,6 @@
 const slugify = require('slugify');
 const requireGlob = require('require-glob');
+const path = require('path');
 
 function convertComponent(component) {
   // Extract variants from component and remove them
@@ -46,10 +47,10 @@ function convertComponent(component) {
 function reducer(options, tree, fileObj) {
   if (!fileObj) return tree;
   if (tree.components === undefined) tree.components = [];
-  const path = fileObj.path.split('/');
+  let componentPath = path.parse(fileObj.path);
   tree.components.push({
     ...fileObj.exports,
-    name: path[path.length - 2]
+    name: componentPath.name.split('.')[0]
   });
   return tree;
 }

@@ -2,6 +2,12 @@
   {% include "../components/" + name + "/" + name + ".njk" ignore missing %}
 {%- endmacro -%}
 
+{% macro notes(name, params) %}
+  {% markdown %}
+  {% include "../components/" + name + "/" + name + ".md" ignore missing %}
+  {% endmarkdown %}
+{% endmacro %}
+
 {% macro code(name, params) %}
   {% highlight "html" %}
     {%- prettify -%}
